@@ -1,0 +1,225 @@
+// Page style
+
+$blue = #33C3F0
+$gray = #333
+
+body
+    color $gray
+    font-family "Raleway"
+    font-size 16px
+    padding 1rem 0
+        
+    h1, h2
+        font-weight 400
+        text-align center
+        
+    h1
+        margin 1rem 0 0 0
+        
+    h2
+        color lighten($gray, 10)
+        font-size 0.75rem
+        margin 0 0 2rem 0
+        
+// Form style
+
+
+form
+    margin 0 auto
+    max-width 280px
+    position relative
+    top 1.5rem
+    text-align center
+    text-transform uppercase
+    
+    input[type="text"]
+        border 1px solid lighten($gray, 50)
+        border-radius 3px
+        box-sizing border-box
+        font-size 1rem
+        padding 0.25rem
+        &:focus
+            border 1px solid $blue
+            outline none
+    
+    input[type="submit"]
+        background $blue
+        border none
+        border-radius 3px
+        color white
+        font-size 0.75rem
+        font-weight 600
+        letter-spacing 1.5px
+        margin 1em 0 0 0
+        padding 10px 30px
+        text-align center
+        text-transform uppercase
+        &:hover
+            background darken($blue, 12)
+            
+    label
+        cursor pointer
+        font-weight 600
+        font-size 0.75rem
+        letter-spacing 1.5px
+        
+    #cvv
+        width 50px
+        
+    #month, #year
+        width 35px
+        
+    #name
+        width 232px
+        
+    #number
+        width 211px
+    
+.block
+    display block
+    margin 0.5rem 0
+        
+// Card style
+
+$card_black = #404040
+$card_blue = #36AADE
+$card_golden = #FFCE3F
+$card_skyblue = #D7E7F0
+$card_white = #F0F0F0
+
+.card
+    background $card_blue
+    border-radius 1rem
+    color $card_white
+    font-weight 600
+    height 220px
+    position absolute
+    width 340px
+
+// Front
+    
+    .card__expiration
+        font-size 1.25rem
+        left 14.5rem
+        position absolute
+        top 8.5rem
+        .card__month
+            display inline
+        .card__year
+            display inline
+
+    .card__little-letter
+        font-size 0.75rem
+        font-weight 400
+        left 12rem
+        position absolute
+        text-align center
+        top 8.25rem
+        width 30px
+        
+    .card__little-number
+        font-size 0.75rem
+        font-weight 400
+        left 1.5rem
+        position absolute
+        top 7.375rem
+
+    .card__name
+        font-size 1.5rem
+        left 1.5rem
+        letter-spacing 2.5px
+        position absolute
+        text-transform uppercase
+        top 10.5rem
+
+    .card__number
+        font-size 1.5rem
+        letter-spacing 2.5px
+        position absolute
+        left 1.5rem
+        top 5.75rem
+        
+    .card__sim
+        background $card_golden
+        border-radius 0.5rem
+        height 3.25rem
+        left 1.5rem
+        position absolute
+        top 2rem
+        width 3.75rem
+        
+    .card__type
+        background darken($card_white, 10)
+        border-radius 0.375rem
+        height 46px
+        left 14.625rem
+        position absolute
+        top 2.25rem
+        width 73px
+        
+        #card__image
+            border-radius 0.375rem
+            height 46px
+            width 73px
+        
+// Back
+
+    .card__black
+        background $card_black
+        height 3rem
+        position absolute
+        top 2rem
+        width 100%
+        
+    .card__cvv
+        background $card_skyblue
+        color $card_black
+        height 2rem
+        left 16rem
+        letter-spacing 2.5px
+        line-height 2rem
+        position absolute
+        text-align center
+        top 6.5rem
+        width 3.5rem
+
+    .card__skyblue
+        background $card_skyblue
+        height 2rem
+        left 1.5rem
+        position absolute
+        top 6.5rem
+        width 13rem
+        
+// Flip animation
+
+.flip-container
+    margin 0 auto
+    perspective 1000
+    width 340px
+    
+.flip-container.flip 
+    .flipper
+    transform rotateY(180deg)
+
+.flip-container, .back, .front
+    height 220px
+    width 340px
+    
+    .flipper
+        position relative
+        transition 0.75s
+        transform-style preserve-3d
+        
+        .back, .front
+            backface-visibility hidden
+            left 0
+            position absolute
+            top 0
+        
+        .back
+            transform rotateY(180deg)
+        
+        .front
+            transform rotateY(0deg)
+            z-index 2
